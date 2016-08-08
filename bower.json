@@ -1,0 +1,18 @@
+{
+    "name": "translator-lodash-requirejs-bridge",
+    "homepage": "https://github.com/DasRed/js-translator-lodash-requirejs-bridge",
+    "main": "Bridge for translator, lodash and requirejs",
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "lodash": "^4.14.1",
+        "requirejs-text": "^2.0.15",
+        "translator": "^1.0.0"
+    }
+}
