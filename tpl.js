@@ -65,11 +65,24 @@ define(['lodash', 'text', 'translator'], function (lodash, text, Translator) {
                     contentReplaced = contentReplaced.replace(htmlStripWhitespacesRegEx[replacement], replacement);
                 }
 
-                write([
-                    'define("' + pluginName + '!' + moduleName + '", ["translator"], function (Translator) {',
-                    'return ' + String(lodash.template(contentReplaced)).replace('return __p', 'return Translator.default.translateInline(__p);') + ';',
+                contentReplaced = contentReplaced.replace(/(['\\])/g, '\\$1')
+                    .replace(/[\f]/g, "\\f")
+                    .replace(/[\b]/g, "\\b")
+                    .replace(/[\n]/g, "\\n")
+                    .replace(/[\t]/g, "\\t")
+                    .replace(/[\r]/g, "\\r")
+                    .replace(/[\u2028]/g, "\\u2028")
+                    .replace(/[\u2029]/g, "\\u2029")
+                ;
+
+                write(
+                    'define("' + pluginName + '!' + moduleName + '", ["translator", "lodash"],  function (Translator, lodash) {' +
+                    'var templatePrepared = lodash.template(\'' + contentReplaced + '\');' +
+                    'return function (obj) {' +
+                    'return Translator.default.translateInline(templatePrepared(obj));' +
+                    '};' +
                     '});'
-                ].join('\n'));
+                );
             }, {
                 isBuild: false
             });
