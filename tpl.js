@@ -76,8 +76,8 @@ define(['lodash', 'text', 'translator'], function (lodash, text, Translator) {
                 ;
 
                 write(
-                    'define("' + pluginName + '!' + moduleName + '", ["translator"],  function (Translator) {' +
-                    'var templatePrepared = ' + String(lodash.template(contentReplaced)) + ';' +
+                    'define("' + pluginName + '!' + moduleName + '", ["translator", "lodash"],  function (Translator, lodash) {' +
+                    'var templatePrepared = lodash.template(\'' + contentReplaced + '\');' +
                     'return function (obj) {' +
                     'return Translator.default.translateInline(templatePrepared(obj));' +
                     '};' +
