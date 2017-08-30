@@ -13,6 +13,6 @@
     "dependencies": {
         "lodash": "^4.14.1",
         "requirejs-text": "^2.0.15",
-        "translator": "^1.0.0"
+        "translator": "^1.1.3"
     }
 }
