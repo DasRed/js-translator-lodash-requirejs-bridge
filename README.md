@@ -1,7 +1,6 @@
 # translator-lodash-requirejs-bridge
 ## Install
 ```
-bower install translator-lodash-requirejs-bridge --save
 npm install js-translator-lodash-requirejs-bridge --save
 ```
 
@@ -23,29 +22,13 @@ Translations keys will be written into braces.
 <a href="www.heise.de">{heise}</a>
 <a href="www.heise.de">{heise}</a>
 ```
-It needs the default translator from bower "translator".
+It needs the default translator from npm "js-translator".
 
 This plugins improves the requirejs plugin "text".
 
-## Configure the Translator and BBCode parser
+## Configure the Translator
 ```
-// use to create a clean parser
-var parser = new BBCode({}, {})
-
-// use default parser
-var parser = BBCode.default
-
-// configure the default parser with
-BBCode.setCodes({});
-
-// use to create a clean translator
-var translator = new Translator({}, {})
-
-// use default translator
-var translator = Translator.default
-
+import translator from 'js-translator'
 // configure the default translator with
-Translator.setTranslations({});
+translator.setTranslations({});
 ```
-
-The Translator use default parser from bower "bbcode-parser".
