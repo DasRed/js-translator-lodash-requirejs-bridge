@@ -1,6 +1,6 @@
 {
     "name": "js-translator-lodash-requirejs-bridge",
-    "version": "1.1.0",
+    "version": "1.1.1",
     "description": "Bridge for translator, lodash and requirejs",
     "main": "tpl.js",
     "repository": {
@@ -14,8 +14,8 @@
     },
     "homepage": "https://github.com/DasRed/js-translator-lodash-requirejs-bridge#readme",
     "dependencies": {
-        "lodash": "^4.17.4",
-        "requirejs-text": "^2.0.15",
-        "js-translator": "^2.0.2"
+        "js-translator": "^2.0.2",
+        "lodash": "^4.17.11",
+        "requirejs-text": "^2.0.15"
     }
 }
